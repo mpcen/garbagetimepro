@@ -2,18 +2,20 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const axios = require('axios');
-// const async = require('async');
-// const cheerio = require('cheerio');
-// const request = require('request-promise');
 
 const keys = require('./config/keys');
-require('./models/League');
 mongoose.connect(keys.mongoURI);
 const app = express();
 const port = process.env.PORT || 5000;
+const {
+	getStreak,
+	getTeamURL,
+	getCompletedWeeks,
+	getMatchesForTeam,
+	getAvatarURL
+} = require('./util/utils');
 
-// const leagueOffice = require('./modules/leagueOffice');
-// const scoreboard = require('./modules/scoreboard');
+require('./models/League');
 
 app.use(morgan(':method: :url :status :date :remote-addr'));
 
@@ -21,75 +23,6 @@ app.get('/api/league/:leagueId/:seasonId', (req, res) => {
 	const startTime = Date.now();
 	const reqLeagueId = req.params.leagueId;
 	const reqLeagueYear = req.params.seasonId;
-
-	function getStreak(streakType, streakLength) {
-		let str = '';
-
-		if (streakType === 1) str += 'W';
-		else if (streakType === 2) str += 'L';
-		else str += 'T';
-
-		str += streakLength;
-
-		return str;
-	}
-
-	function getTeamURL(leagueId, teamId, seasonId) {
-		const baseURL = 'http://games.espn.com/ffl/clubhouse?';
-		return `${baseURL}leagueId=${leagueId}&teamId=${teamId}&seasonId=${seasonId}`;
-	}
-
-	function getCompletedWeeks({
-		overallWins,
-		overallLosses,
-		overallTies
-	}) {
-		return overallWins + overallLosses + overallTies
-	}
-
-	function getMatchesForTeam(teamId, scheduleItems, regularSeasonGames) {
-		const matches = [];
-
-		for (let i = 0; i < scheduleItems.length; i++) {
-			if (i === regularSeasonGames) break;
-			const {
-				matchups,
-				matchupPeriodId
-			} = scheduleItems[i];
-
-			const opponent = {
-				id: null,
-				score: null
-			};
-			const match = {
-				week: matchupPeriodId,
-				score: null,
-				opponent
-			};
-
-			if (teamId === matchups[0].awayTeamId) {
-				match.score = matchups[0].awayTeamScores[0];
-				opponent.id = matchups[0].homeTeamId;
-				opponent.score = matchups[0].homeTeamScores[0];
-			} else {
-				match.score = matchups[0].homeTeamScores[0];
-				opponent.id = matchups[0].awayTeamId;
-				opponent.score = matchups[0].awayTeamScores[0];
-			}
-
-			matches.push(match);
-		};
-
-		return matches;
-	}
-
-	function getAvatarURL(logoUrl) {
-		if (!logoUrl) {
-			return 'http://g.espncdn.com/lm-static/ffl18/images/default.svg';
-		}
-
-		return logoUrl;
-	}
 
 	axios.get(`http://games.espn.com/ffl/api/v2/leagueSettings?leagueId=${reqLeagueId}&seasonId=${reqLeagueYear}`)
 		.then(response => {
@@ -101,7 +34,6 @@ app.get('/api/league/:leagueId/:seasonId', (req, res) => {
 				completedWeeks: getCompletedWeeks(leagueSettings.teams['1'].record),
 				finalMatchupPeriodId: leagueSettings.finalMatchupPeriodId,
 				regularSeasonMatchupPeriodCount: leagueSettings.regularSeasonMatchupPeriodCount,
-				// leagueMembers: leagueSettings.leagueMembers,
 				teams: []
 			};
 
@@ -128,6 +60,7 @@ app.get('/api/league/:leagueId/:seasonId', (req, res) => {
 			}
 
 			const League = mongoose.model('leagues');
+
 			League.findOne({
 					'leagueId': league.leagueId
 				})
