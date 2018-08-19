@@ -5,6 +5,7 @@ A tool for **PUBLIC** ESPN.com Fantasy Football leagues that provides missing cr
 ##
 
 **Original Reddit launch thread can be found at:**
+
 https://www.reddit.com/r/fantasyfootball/comments/76ye2p/hey_reddit_i_built_a_tool_for_public_espn_leagues/
 
 ##
@@ -18,10 +19,21 @@ https://www.reddit.com/r/fantasyfootball/comments/76ye2p/hey_reddit_i_built_a_to
 Assuming **./** is the project's root directory:
 
 -   Create a **dev.js** file inside **./config** that looks like the following:
-    `module.exports = { mongoURI: 'your-mongodb-address:your-mongodb-port' };`
-    example:
-    `module.exports = { mongoURI: ' mongodb://localhost:27017' };`
+
+`module.exports = { mongoURI: 'your-mongodb-address:your-mongodb-port' };`
+
+example:
+
+`module.exports = { mongoURI: ' mongodb://localhost:27017' };`
+
 -   run **yarn install** from **./** directory
+
 -   run **yarn install** from **./client** directory
+
 -   start your instance of mongoDB
+
 -   run **yarn run dev** from **./** directory
+
+##
+
+App demonstration: https://www.youtube.com/watch?v=yCcsOrEaiOs&feature=youtu.be
