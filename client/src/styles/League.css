@@ -1,0 +1,18 @@
+.league-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 32px;
+	position: relative;
+	background-color: #222323;
+}
+
+.league-compare-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: center;
+}

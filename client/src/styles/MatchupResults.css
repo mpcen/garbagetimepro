@@ -1,0 +1,31 @@
+.matchup-results-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	background-color: rgba(34, 35, 35, 0.9);
+	color: #FFF;
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 300 !important;
+	width: 100%;
+}
+
+.matchup-results-empty {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	color: #777;
+	text-align: center;
+}
+
+.matchup-results-empty h1 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #FFF;	
+}
+
+@media (max-width: 500px) {
+	.matchup-results-empty h1 {
+		font-size: 18px;
+	}
+}

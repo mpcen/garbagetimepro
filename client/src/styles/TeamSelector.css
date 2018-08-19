@@ -1,0 +1,14 @@
+.team-selector {
+	margin: 0 24px 24px 24px;
+	width: 300px;
+}
+
+.team-avatar img {
+	object-fit: cover;
+}
+
+/*MOBILE RESPONSIVE STYLES*/
+
+@media (max-width: 720px) {
+	
+}

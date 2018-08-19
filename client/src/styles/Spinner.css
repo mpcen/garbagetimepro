@@ -1,0 +1,98 @@
+div#spinner-container {
+  position: relative;
+}
+
+div#spinner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+div#spinner::after,
+div#spinner::before,
+div#spinner {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #000;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+div#spinner {
+  animation-name: dot1;
+}
+
+div#spinner::before {
+  animation-name: dot2;
+}
+
+div#spinner::after {
+  animation-name: dot3;
+}
+@keyframes dot1 {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  25% {
+    top: 20px;
+    left: 0px;
+  }
+  75% {
+    top: 20px;
+    left: 0px;
+  }
+  100% {
+    top: 20px;
+    left: 20px;
+  }
+}
+
+@keyframes dot2 {
+  0% {
+    top: 0px;
+    left: 20px;
+  }
+  25% {
+    top: -20px;
+    left: 20px;
+  }
+  50% {
+    top: -20px;
+    left: 0px;
+  }
+  75% {
+    top: -20px;
+    left: 0px;
+  }
+  100% {
+    top: -20px;
+    left: -20px;
+  }
+}
+
+@keyframes dot3 {
+  0% {
+    top: 20px;
+    left: 20px;
+  }
+  25% {
+    top: 0px;
+    left: 20px;
+  }
+  50% {
+    top: 0px;
+    left: 20px;
+  }
+  75% {
+    top: -20px;
+    left: 20px;
+  }
+  100% {
+    top: -20px;
+    left: 0px;
+  }
+}

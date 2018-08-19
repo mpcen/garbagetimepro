@@ -1,0 +1,48 @@
+.team-select-container {
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 24px 0;
+	background-color: #222323;
+}
+
+.btn-compare-teams {
+	margin: 0 !important;
+	background-color: #2185d0 !important;
+	color: #FFF !important;
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 400 !important;
+	font-size: 14px !important;
+}
+
+.btn-compare-teams:hover {
+	background: #e0e1e2 none !important;
+	color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.team-select-container .selector-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.team-select-msg {
+	color: #FFF;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+}
+
+/*MOBILE RESPONSIVE STYLES*/
+
+@media (max-width: 720px) {
+	.team-select-container .selector-container {
+		flex-direction: column;
+	}
+
+	.btn-compare-teams:hover {
+		background-color: #2185d0 !important;
+		color: #FFF !important;
+	}
+}

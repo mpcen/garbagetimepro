@@ -1,0 +1,240 @@
+.powerrankings-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+}
+
+.powerrankings-title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/*border-top: 1px solid #555;*/
+	width: 100%;
+	background-color: rgba(34, 35, 35, 0.9);
+	padding: 24px 0;
+	color: #FFF;
+}
+
+.powerrankings-title h2 {
+	font-family: 'Roboto', sans-serif !important;
+	color: #FFF;
+	margin-bottom: 0;
+}
+
+.powerrankings-list {		
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	background-color: rgba(34, 35, 35, 0.9);
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	align-items: center;
+}
+
+.powerrankings-list-header {
+	display: flex;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #555;
+	border-left: 1px solid #555;
+	width: 800px;
+}
+
+.powerrankings-list-header h3 {
+	font-family: 'Roboto', sans-serif !important;
+	color: #FFF;	
+}
+
+.powerrankings-list-header-rank {
+	display: flex;
+	justify-content: center;
+	width: 124px;
+	border-right: 1px solid #555;
+	padding: 8px 0;
+}
+
+.powerrankings-list-header-team {
+	display: flex;
+	justify-content: center;
+	padding: 8px 0;
+	border-right: 1px solid #555;
+	flex: 1;
+}
+
+.powerrankings-list-header-pr-points {
+	display: flex;
+	justify-content: center;
+	width: 124px;
+	border-right: 1px solid #555;
+	padding: 8px 0;
+}
+
+.powerrankings-team-container {
+	display: flex;
+	width: 800px;
+	border-right: 1px solid #555;	
+	border-left: 1px solid #555;
+	border-bottom: 1px solid #555;	
+}
+
+.powerrankings-team-rank {
+	display: flex;
+	justify-content: center;
+	color: #FFF;
+	border-right: 1px solid #555;
+	padding: 32px;
+	width: 124px;
+}
+
+.powerrankings-team-rank h1 {
+	font-family: 'Roboto', sans-serif !important;
+}
+
+.powerrankings-team-info {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	will-change: transform;
+}
+
+.powerrankings-team-avatar-container {
+	padding: 8px;
+}
+
+.powerrankings-team-avatar-container img {
+	object-fit: cover !important;
+	border-radius: 50% !important;
+	width: 100px !important;
+	height: 100px !important;	
+}
+
+.powerrankings-team-name {
+	padding: 0 8px;
+}
+
+.powerrankings-team-name h2 {
+	font-family: 'Roboto', sans-serif !important;
+	color: #FFF;
+}
+
+.powerrankings-team-powerRankPoints {
+	display: flex;
+	border-left: 1px solid #555;
+	justify-content: center;	
+	align-items: center;
+	width: 124px;
+}
+
+.powerrankings-team-powerRankPoints h1 {
+	font-family: 'Roboto', sans-serif !important;
+	color: #FFF;
+}
+
+/*MOBILE RESPONSIVE STYLES*/
+@media (max-width: 900px) {
+	.powerrankings-list-header {
+		width: 100%;
+	}
+
+	.powerrankings-team-container {
+		width: 100%;
+	}
+
+	.powerrankings-list-header-rank {
+		width: 100px;
+	}
+
+	.powerrankings-list-header-pr-points {
+		width: 100px;
+	}
+
+	.powerrankings-team-rank {
+		width: 100px;
+	}
+
+	.powerrankings-team-powerRankPoints {
+		width: 100px;
+	}
+}
+
+@media (max-width: 720px) {
+	.powerrankings-team-rank h1 {
+		font-family: 'Roboto', sans-serif !important;
+		font-size: 20px;
+	}
+
+	.powerrankings-team-avatar-container img {
+		width: 60px !important;
+		height: 60px !important;	
+	}
+
+	.powerrankings-team-name h2 {
+		font-size: 18px;
+	}
+
+	.powerrankings-team-powerRankPoints h1 {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 600px) {
+	.powerrankings-list-header-rank {
+		width: 60px;
+	}
+
+	.powerrankings-list-header h3 {
+		font-size: 14px;		
+	}
+
+	.powerrankings-list-header-pr-points {
+		width: 80px;
+	}
+
+	.powerrankings-team-rank {
+		width: 60px;
+		padding: 8px;
+	}
+
+	.powerrankings-team-avatar-container img {
+		width: 40px !important;
+		height: 40px !important;	
+	}
+
+	.powerrankings-team-powerRankPoints {
+		width: 80px;
+		padding: 8px;
+	}
+}
+
+@media (max-width: 500px) {
+	.powerrankings-list-header-rank {
+		width: 40px;
+	}
+
+	.powerrankings-list-header h3 {
+		font-size: 12px;		
+	}
+
+	.powerrankings-team-rank {
+		width: 40px;
+		padding: 8px;
+	}
+
+	.powerrankings-team-avatar-container img {
+		width: 30px !important;
+		height: 30px !important;	
+	}
+
+	.powerrankings-team-name h2 {
+		font-size: 14px;
+		font-weight: 300;
+	}
+
+	.powerrankings-team-powerRankPoints h1 {
+		width: 70px;
+		font-weight: 400;
+	}
+}
