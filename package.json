@@ -12,7 +12,8 @@
         "server": "nodemon index.js",
         "client": "yarn run start --prefix client",
         "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-        "security-check": "nsp check --preprocessor yarn --reporter table"
+        "security-check": "nsp check --preprocessor yarn --reporter table",
+        "heroku-postbuild": "cd client && yarn && yarn run build"
     },
     "keywords": [],
     "author": "",
