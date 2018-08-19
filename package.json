@@ -12,8 +12,7 @@
         "server": "nodemon index.js",
         "client": "yarn run start --prefix client",
         "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-        "security-check": "nsp check --preprocessor yarn --reporter table",
-        "heroku-postbuild": "YARN_PRODUCTION=false yarn install --prefix client && yarn run build --prefix client"
+        "security-check": "nsp check --preprocessor yarn --reporter table"
     },
     "keywords": [],
     "author": "",
@@ -25,10 +24,5 @@
         "express": "^4.15.5",
         "mongoose": "^4.12.1",
         "morgan": "^1.9.0"
-    },
-    "devDependencies": {
-        "nodemon": "^1.12.1",
-        "nsp": "^3.2.1",
-        "nsp-preprocessor-yarn": "^1.1.2"
     }
 }
