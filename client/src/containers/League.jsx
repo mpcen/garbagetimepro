@@ -59,6 +59,7 @@ class League extends Component {
                 <LeagueHeader leagueName={this.props.leagueName} />
 
                 <Switch>
+                    {/* LEAGUE HOME */}
                     <Route
                         exact
                         path={`${this.props.match.path}`}
@@ -74,6 +75,7 @@ class League extends Component {
                         }}
                     />
 
+                    {/* POWER RANKINGS */}
                     <Route
                         exact
                         path={`${this.props.match.path}/rankings`}
@@ -82,6 +84,7 @@ class League extends Component {
                         }}
                     />
 
+                    {/* COMPARE */}
                     <Route
                         exact
                         path={`${this.props.match.path}/compare`}

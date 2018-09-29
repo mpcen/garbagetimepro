@@ -14,11 +14,18 @@ class TeamSelect extends Component {
 	}
 
 	componentDidMount() {
-		if((Number(this.props.match.params.team1Id) === Number(this.props.match.params.team2Id)) || isNaN(Number(this.props.match.params.team1Id)) || isNaN(Number(this.props.match.params.team2Id)) || (Number(this.props.match.params.team1Id) <= 0 || Number(this.props.match.params.team2Id) <= 0)) {
+		if (
+			(Number(this.props.match.params.team1Id) === Number(this.props.match.params.team2Id))
+			|| isNaN(Number(this.props.match.params.team1Id))
+			|| isNaN(Number(this.props.match.params.team2Id))
+			|| (Number(this.props.match.params.team1Id) <= 0
+			|| Number(this.props.match.params.team2Id) <= 0)
+		) {
 			this.props.history.replace(`/league/${this.props.match.params.leagueId}/compare`);
 		} else if(this.props.leagueId && this.props.match.params.team1Id && this.props.match.params.team2Id) {
 			this.handleTeamSelections(
 				this.props.leagueId,
+				this.props.completedWeeks,
 				this.props.teams,
 				this.props.match.params.team1Id,
 				this.props.match.params.team2Id
@@ -41,16 +48,16 @@ class TeamSelect extends Component {
 		}
 	}
 
-	handleTeamSelections(leagueId, teams, team1Id, team2Id) {
+	handleTeamSelections(leagueId, completedWeeks, teams, team1Id, team2Id) {
 		this.props.updateTeamSelect(teams, 'select-team1', Number(team1Id));
 		this.props.updateTeamSelect(teams, 'select-team2', Number(team2Id));
-		this.props.compareTeams(leagueId, teams, Number(team1Id), Number(team2Id));
+		this.props.compareTeams(leagueId, completedWeeks, teams, Number(team1Id), Number(team2Id));
 	}
 
 	handleClick() {
 		if(Number(this.props.match.params.team1Id) !== this.props.selectedTeam1Id || Number(this.props.match.params.team2Id) !== this.props.selectedTeam2Id) {
 			this.props.history.push(`/league/${this.props.leagueId}/compare/${this.props.selectedTeam1Id}/${this.props.selectedTeam2Id}`);
-			this.props.compareTeams(this.props.leagueId, this.props.teams, this.props.selectedTeam1Id, this.props.selectedTeam2Id);
+			this.props.compareTeams(this.props.leagueId, this.props.completedWeeks, this.props.teams, this.props.selectedTeam1Id, this.props.selectedTeam2Id);
 		}
 	}
 
@@ -87,6 +94,7 @@ class TeamSelect extends Component {
 const mapStateToProps = state => {
 	return {
 		leagueId: state.league.leagueId,
+		completedWeeks: state.league.completedWeeks,
 		teams: state.league.teams,
 		selectedTeam1Id: state.league.selectedTeam1Id,
 		selectedTeam2Id: state.league.selectedTeam2Id,

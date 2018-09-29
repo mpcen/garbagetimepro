@@ -7,18 +7,15 @@ import '../styles/PowerRankings.css';
 
 class PowerRankings extends Component {
 	componentDidMount() {
-		// debugger;
 		if(this.props.teams.length) {
 			this.props.generatePowerRankings(this.props.teams);
 		}
 	}
 
 	componentWillReceiveProps(nextProps) {
-		// debugger;
 	}
 
 	renderPowerRankings(powerRankings) {
-		// debugger;
 		if(!powerRankings) {
 			return <div />
 		} else {

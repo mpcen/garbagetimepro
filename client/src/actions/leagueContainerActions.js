@@ -43,8 +43,16 @@ export const updateTeamSelect = (teams, teamSelector, teamId) => {
 	};
 };
 
-export const compareTeams = (leagueId, teams, team1Id, team2Id) => {
-	if (team1Id <= 0 || team2Id <= 0 || isNaN(team1Id) || isNaN(team2Id) || team1Id === team2Id || (!teams.some(team => team.id === team1Id) || !teams.some(team => team.id === team2Id))) {
+export const compareTeams = (leagueId, completedWeeks, teams, team1Id, team2Id) => {
+	if (
+		team1Id <= 0
+		|| team2Id <= 0
+		|| isNaN(team1Id)
+		|| isNaN(team2Id)
+		|| team1Id === team2Id
+		|| (!teams.some(team => team.id === team1Id)
+		|| !teams.some(team => team.id === team2Id))
+	) {
 		return {
 			type: COMPARE_TEAMS_FAIL,
 			payload: {
@@ -65,9 +73,6 @@ export const compareTeams = (leagueId, teams, team1Id, team2Id) => {
 		}
 	}
 
-	//team1.matches = sortMatches(team1.matches);
-	//team2.matches = sortMatches(team2.matches);	
-
 	if (team1 === undefined || team2 === undefined) {
 		return {
 			type: COMPARE_TEAMS_FAIL,
@@ -76,9 +81,9 @@ export const compareTeams = (leagueId, teams, team1Id, team2Id) => {
 			}
 		}
 	}
-
-	let team1Opponents = getTeamOpponents(team1.matches);
-	let team2Opponents = getTeamOpponents(team2.matches);
+	
+	let team1Opponents = getTeamOpponents(team1.matches, completedWeeks);
+	let team2Opponents = getTeamOpponents(team2.matches, completedWeeks);
 
 	let team1Results = generateResults(team1, team2, team2Opponents);
 	let team2Results = generateResults(team2, team1, team1Opponents);

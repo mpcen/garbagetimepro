@@ -4,10 +4,14 @@ export const sortMatches = matches => {
 	});
 };
 
-export const getTeamOpponents = matches => {
-	return matches.map(match => {
-		return match.opponent;
-	});
+export const getTeamOpponents = (matches, completedWeeks) => {
+	const opponents = [];
+
+	for(let i = 0; i < completedWeeks; i++) {
+		opponents.push(matches[i].opponent);
+	}
+
+	return opponents;
 };
 
 export const generateResults = (team1, team2, team2Opponents) => {
@@ -33,12 +37,13 @@ export const generateResults = (team1, team2, team2Opponents) => {
 
 		results.matchups.push(matchup);
 
-		if(matchup.score > matchup.opponentScore)
+		if(matchup.score > matchup.opponentScore) {
 			results.wins++;
-		else if(matchup.score < matchup.opponentScore)
+		} else if(matchup.score < matchup.opponentScore) {
 			results.losses++;
-		else
+		} else {
 			results.ties++;
+		}
 	});
 
 	return results;

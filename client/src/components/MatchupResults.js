@@ -33,18 +33,8 @@ const renderResults = (teams, team1, team1Results, team2, team2Results) => {
 	}
 };
 
-const MatchupResults = props => {	
+const MatchupResults = props => {
 	return renderResults(props.teams, props.team1, props.team1Results, props.team2, props.team2Results);
 };
 
 export default MatchupResults;
-
-/*
-
-<div className="matchup-results-container">
-				<div className="matchup-results-empty">
-					<h1>Select two teams to compare schedules</h1>
-				</div>
-			</div>
-
-*/

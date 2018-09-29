@@ -25,12 +25,10 @@ export const updateSearchLeagueText = text => {
 export const searchLeagueOffice = (route, text) => {
 	let leagueURL = null,
 		leagueId = null;
-	//seasonId = null;
 
 	try {
 		leagueURL = new URL(text);
 		leagueId = leagueURL.searchParams.get('leagueId');
-		//seasonId = leagueURL.searchParams.get('seasonId');
 
 		if ((leagueURL && leagueURL.hostname !== 'games.espn.com') ||
 			(leagueURL && leagueURL.hostname === 'games.espn.com' && !leagueId)) {
@@ -54,7 +52,7 @@ export const searchLeagueOffice = (route, text) => {
 			type: SEARCH_LEAGUE_OFFICE
 		});
 
-		axios.get(`/api/league/${leagueId}/2017`)
+		axios.get(`/api/league/${leagueId}/2018`)
 			.then(res => {
 				//if there's a new league coming in, push a new route onto history stack
 				if (!route) {
