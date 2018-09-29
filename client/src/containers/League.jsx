@@ -84,7 +84,7 @@ class League extends Component {
                         }}
                     />
 
-                    {/* COMPARE */}
+                    {/* COMPARE SELECTION */}
                     <Route
                         exact
                         path={`${this.props.match.path}/compare`}
@@ -106,6 +106,7 @@ class League extends Component {
                         }}
                     />
 
+                    {/* COMPARE MATCH */}
                     <Route
                         path={`${
                             this.props.match.path

@@ -119,38 +119,11 @@ export const generatePROpponentPoints = numberOfTeams => {
 	return key;
 }
 
-export const generatePowerRankings = teams => {
+export const generatePowerRankings = (teams, completedWeeks) => {
 	let opponentRankTable = generatePROpponentPoints(teams.length);
 
-	// MANUALLY CALCULATE STREAK
-	// let teamStreaks = teams.map(team => {
-	// 	const teamId = team.id;
-	// 	let streak = 0;
-
-	// 	team.matches.forEach(({ score, opponent }) => {
-	// 		let win = score > opponent.score ? 1 : 0;
-	// 		let loss = score < opponent.score ? 1 : 0;
-
-	// 		if(win === 1) {
-	// 			if(streak > 0) {
-	// 				streak++;
-	// 			} else {
-	// 				streak = 1;
-	// 			}
-	// 		} else if(loss === 1) {
-	// 			if(streak < 0) {
-	// 				streak--;
-	// 			} else {
-	// 				streak = -1
-	// 			}
-	// 		}
-	// 	});
-
-	// 	return { teamId, streak };
-	// });
-
 	// initialize empty week array
-	let weeklyTeamPointsFor = new Array(teams[0].matches.length).fill().map(index => []);
+	let weeklyTeamPointsFor = new Array(completedWeeks).fill().map(index => []);
 
 	// iterate through each teams matches and store PF into weeklyTeamPointsFor arr
 	teams.forEach(team => {

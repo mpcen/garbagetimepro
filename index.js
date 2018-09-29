@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const axios = require('axios');
 
+// FAKE DATA
+//const fakeData = require('./fakeData/postweek1.json');
+
 const keys = require('./config/keys');
 mongoose.connect(keys.mongoURI);
 const app = express();
@@ -53,7 +56,7 @@ app.get('/api/league/:leagueId/:seasonId', (req, res) => {
 						ties: $team.record.overallTies
 					},
 					streak: getStreak($team.record.streakType, $team.record.streakLength),
-					matches: getMatchesForTeam($team.teamId, $team.scheduleItems, league.regularSeasonMatchupPeriodCount)
+					matches: getMatchesForTeam($team.teamId, $team.scheduleItems, league.completedWeeks)
 				};
 
 				league.teams.push(team);

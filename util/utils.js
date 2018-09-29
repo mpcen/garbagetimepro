@@ -21,11 +21,10 @@ module.exports = {
     }) {
         return overallWins + overallLosses + overallTies
     },
-    getMatchesForTeam(teamId, scheduleItems, regularSeasonGames) {
+    getMatchesForTeam(teamId, scheduleItems, completedWeeks) {
         const matches = [];
 
-        for (let i = 0; i < scheduleItems.length; i++) {
-            if (i === regularSeasonGames) break;
+        for (let i = 0; i < completedWeeks; i++) {
             const {
                 matchups,
                 matchupPeriodId

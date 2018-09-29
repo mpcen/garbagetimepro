@@ -8,7 +8,7 @@ import '../styles/PowerRankings.css';
 class PowerRankings extends Component {
 	componentDidMount() {
 		if(this.props.teams.length) {
-			this.props.generatePowerRankings(this.props.teams);
+			this.props.generatePowerRankings(this.props.teams, this.props.completedWeeks);
 		}
 	}
 

@@ -1,0 +1,240 @@
+{
+    "leagueName": "League of Thrones",
+    "leagueId": "1246423",
+    "seasonId": "2018",
+    "completedWeeks": 1,
+    "finalMatchupPeriodId": 16,
+    "regularSeasonMatchupPeriodCount": 14,
+    "teams": [
+        {
+            "id": 1,
+            "name": "Julio, Julio. Ju-Li-oOoO",
+            "abbrev": "Ju",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=1&seasonId=2018",
+            "avatarURL": "https://i.redd.it/nk3slhpf7ncz.jpg",
+            "record": {
+                "wins": 1,
+                "losses": 0,
+                "ties": 0
+            },
+            "streak": "W1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 129.16,
+                    "opponent": {
+                        "id": 3,
+                        "score": 89.04
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "What Can Brown Do For You?!",
+            "abbrev": "IWIN",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=2&seasonId=2018",
+            "avatarURL": "http://www.thefantasygridiron.com/wp-content/uploads/photo-gallery/What_Can_Brown_Do_For_You_-_Antonio_Brown_-_UPS.jpg",
+            "record": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0
+            },
+            "streak": "L1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 111.5,
+                    "opponent": {
+                        "id": 10,
+                        "score": 133.64
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Show me your TD Show me your TD",
+            "abbrev": "MC",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=3&seasonId=2018",
+            "avatarURL": "http://g.espncdn.com/s/ffllm/logos/8bitHeros-JoeyEllis/8bit_football-02.svg",
+            "record": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0
+            },
+            "streak": "L1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 89.04,
+                    "opponent": {
+                        "id": 1,
+                        "score": 129.16
+                    }
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Stairway to Evans",
+            "abbrev": "LEEP",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=4&seasonId=2018",
+            "avatarURL": "http://g.espncdn.com/lm-static/ffl18/images/default.svg",
+            "record": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0
+            },
+            "streak": "L1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 62.46,
+                    "opponent": {
+                        "id": 6,
+                        "score": 150.38
+                    }
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Air  Raid",
+            "abbrev": "McVa",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=5&seasonId=2018",
+            "avatarURL": "http://g.espncdn.com/lm-static/logo-packs/ffl/MickeyAndDonald-Disney/Disney-04.svg",
+            "record": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0
+            },
+            "streak": "L1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 145.02,
+                    "opponent": {
+                        "id": 7,
+                        "score": 164.26
+                    }
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Game of Jones",
+            "abbrev": "GOJ",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=6&seasonId=2018",
+            "avatarURL": "http://g.espncdn.com/s/ffllm/logos/TeamMascots-RobbHarskamp/Team_Mascots-07.svg",
+            "record": {
+                "wins": 1,
+                "losses": 0,
+                "ties": 0
+            },
+            "streak": "W1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 150.38,
+                    "opponent": {
+                        "id": 4,
+                        "score": 62.46
+                    }
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Breesy Like Sunday Morning",
+            "abbrev": "WIN",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=7&seasonId=2018",
+            "avatarURL": "https://img.cinemablend.com/cb/3/c/a/b/5/b/3cab5bcd1adffe37652ced349473a458d8c333f67b627bddd1c135f176bc8f05.jpg",
+            "record": {
+                "wins": 1,
+                "losses": 0,
+                "ties": 0
+            },
+            "streak": "W1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 164.26,
+                    "opponent": {
+                        "id": 5,
+                        "score": 145.02
+                    }
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "The NoBell Prize",
+            "abbrev": "28-3",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=8&seasonId=2018",
+            "avatarURL": "https://media1.tenor.com/images/1ec10c7d52eec35e73994aefb2ec29a4/tenor.gif",
+            "record": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0
+            },
+            "streak": "L1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 114.74,
+                    "opponent": {
+                        "id": 9,
+                        "score": 162.44
+                    }
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Post Mahomes",
+            "abbrev": "MIA",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=9&seasonId=2018",
+            "avatarURL": "http://g.espncdn.com/lm-static/ffl18/images/default.svg",
+            "record": {
+                "wins": 1,
+                "losses": 0,
+                "ties": 0
+            },
+            "streak": "W1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 162.44,
+                    "opponent": {
+                        "id": 8,
+                        "score": 114.74
+                    }
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Never forget Podrick",
+            "abbrev": "PERE",
+            "url": "http://games.espn.com/ffl/clubhouse?leagueId=1246423&teamId=10&seasonId=2018",
+            "avatarURL": "http://pbs.twimg.com/profile_images/427326274743173120/5uAv0v7M.jpeg",
+            "record": {
+                "wins": 1,
+                "losses": 0,
+                "ties": 0
+            },
+            "streak": "W1",
+            "matches": [
+                {
+                    "week": 1,
+                    "score": 133.64,
+                    "opponent": {
+                        "id": 2,
+                        "score": 111.5
+                    }
+                }
+            ]
+        }
+    ]
+}
