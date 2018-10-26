@@ -1,0 +1,23 @@
+.Histogram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.Histogram-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*border-top: 1px solid #555;*/
+        width: 100%;
+        background-color: rgba(34, 35, 35, 0.9);
+        padding: 24px 0;
+        color: #FFF;
+}
+
+.Histogram-title h2 {
+	font-family: 'Roboto', sans-serif !important;
+	color: #FFF;
+	margin-bottom: 0;
+}

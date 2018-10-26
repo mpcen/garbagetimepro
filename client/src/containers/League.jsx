@@ -10,6 +10,7 @@ import LeagueHeader from "../components/LeagueHeader";
 import TeamSelect from "./TeamSelect";
 import MatchupResults from "../components/MatchupResults";
 import PowerRankings from "../components/PowerRankings";
+import Histogram from "./Histogram/Histogram"
 
 class League extends Component {
     componentDidMount() {
@@ -127,6 +128,12 @@ class League extends Component {
                                 </div>
                             );
                         }}
+                    />
+
+                    {/* Random Stats */}
+                    <Route
+                        path={`${this.props.match.path}/stats`}
+                        render={props => <Histogram {...props} />}
                     />
 
                     <Redirect to={"/"} />
