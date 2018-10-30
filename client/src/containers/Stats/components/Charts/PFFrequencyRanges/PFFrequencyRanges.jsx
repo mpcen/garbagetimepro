@@ -113,7 +113,7 @@ export default class PFFrequencyRanges extends Component {
         return (
             <div className="PFFrequencyRanges">
                 <div className="PFFrequencyRanges-title">
-                    <h2>Points-For Frequency Rages</h2>
+                    <h2>Points-For Frequency Ranges</h2>
                     <p>(Median Points-For: {this.state.median.toFixed(2)})</p>
                 </div>
 
