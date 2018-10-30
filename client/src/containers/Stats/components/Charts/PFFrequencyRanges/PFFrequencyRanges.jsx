@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Bar } from 'react-chartjs-2';
-import './Histogram.css';
+import './PFFrequencyRanges.css';
 
-class Histogram extends Component {
+export default class PFFrequencyRanges extends Component {
     constructor(props) {
         super(props);
 
@@ -51,10 +50,14 @@ class Histogram extends Component {
             data.push(scoreBuckets[range]);
         }
 
+        const labels = Object.keys(scoreBuckets).map(scoreBucket => {
+            return `${scoreBucket}'s`;
+        });
+
         this.setState({
             median,
             scoreBuckets,
-            labels: Object.keys(scoreBuckets),
+            labels,
             data
         });
     }
@@ -64,9 +67,10 @@ class Histogram extends Component {
             labels: this.state.labels,
             datasets: [
                 {
+                    
                     label: 'Points-For Range',
                     backgroundColor: 'rgba(33,133,208,0.5)',
-                    borderColor: 'rgba(255,255,255,.75)',
+                    borderColor: 'rgba(255,255,255,0.75)',
                     borderWidth: 1,
                     data: this.state.data
                 }
@@ -82,33 +86,41 @@ class Histogram extends Component {
                 }
             },
             scales: {
+                xAxes: [
+                    {
+                        ticks: {
+                            maxRotation: 90,
+                        },
+                        gridLines: {
+                            display: false,
+                            offsetGridLines: true
+                        },
+                        // used to group bars together
+                        // barPercentage: 1.0, 
+                        // categoryPercentage: 1.0
+                    }
+                ],
                 yAxes: [{
                     scaleLabel: {
                         display: true,
                         fontColor: '#fff',
-                        labelString: 'Frequency'
+                        labelString: 'Frequency',
                     }
                 }]
             }
         }
 
         return (
-            <div className="Histogram">
-                <div className="Histogram-title">
-                    <h2>Points-For Histogram</h2>
-                    <p>(Median: {this.state.median})</p>
+            <div className="PFFrequencyRanges">
+                <div className="PFFrequencyRanges-title">
+                    <h2>Points-For Frequency Rages</h2>
+                    <p>(Median Points-For: {this.state.median.toFixed(2)})</p>
                 </div>
 
-                <Bar className="Histogram-barchart" data={data} options={options} />
+                <div className="PFFrequencyRanges-chart-container">
+                    <Bar data={data} options={options} />
+                </div>
             </div>
         );
     }
 }
-
-const mapStateToProps = state => {
-    return {
-        teams: state.league.teams
-    }
-}
-
-export default connect(mapStateToProps)(Histogram);

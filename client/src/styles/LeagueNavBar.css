@@ -48,6 +48,11 @@
 	.league-navigation-container {
 		top: 54px;
 	}
+
+	.league-navigation-list li a {
+		padding: 4px 7px;
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 400px) {
@@ -60,8 +65,27 @@
 	}
 
 	.league-navigation-list li a {
-		padding: 8px 14px;
+		padding: 4px 7px;
 		font-size: 12px;
+	}
+
+	/*.league-navigation-list {
+		margin: 8px 0;
+	}*/
+}
+
+@media (max-width: 350px) and (min-width: 200px) {
+	.league-navigation-container {
+		top: 48px;
+	}
+
+	.league-navigation-list li {
+		margin: 4px 18px;
+	}
+
+	.league-navigation-list li a {
+		padding: 4px 7px;
+		font-size: 10px;
 	}
 
 	/*.league-navigation-list {

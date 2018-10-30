@@ -64,7 +64,7 @@ class TeamSelect extends Component {
 	render() {
 		return (
 			<div className="team-select-container">
-				
+
 				<div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
 					<p className="team-select-msg">
 						Select two teams to compare schedules

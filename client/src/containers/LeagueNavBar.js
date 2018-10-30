@@ -22,22 +22,17 @@ class LeagueNavBar extends Component {
 	}
 
 	parseRoute(leagueRoute) {
-		let leagueRouteArr = leagueRoute.split('/');
-		let compareRoute = leagueRouteArr.some(route => route === 'compare');
-		let powerRankingsRoute = leagueRouteArr.some(route => route === 'rankings');
+		const leagueRouteArr = leagueRoute.split('/');
+		const compareRoute = leagueRouteArr.some(route => route === 'compare');
+		const powerRankingsRoute = leagueRouteArr.some(route => route === 'rankings');
+		const statsRoute = leagueRouteArr.some(route => route === 'stats');
 
 		if(compareRoute) {
-			this.setState({
-				activeRoute: 'compare'
-			})
+			this.setState({ activeRoute: 'compare' });
 		} else if(powerRankingsRoute) {
-			this.setState({
-				activeRoute: 'rankings'
-			})
-		} else {
-			this.setState({
-				activeRoute: 'leagueHome'
-			})
+			this.setState({ activeRoute: 'rankings' });
+		} else if(statsRoute) {
+			this.setState({ activeRoute: 'stats' });
 		}
 	}
 
@@ -54,6 +49,12 @@ class LeagueNavBar extends Component {
 					<li className={this.state.activeRoute === 'compare' ? 'leagueRoute-active' : ''}>
 						<Link to={`/league/${this.props.leagueId}/compare`}>
 							Compare Teams
+						</Link>
+					</li>
+
+					<li className={this.state.activeRoute === 'stats' ? 'leagueRoute-active' : ''}>
+						<Link to={`/league/${this.props.leagueId}/stats`}>
+							Stats
 						</Link>
 					</li>
 
