@@ -1,6 +1,6 @@
 ## Garbage Time Pro - http://garbagetime.pro
 
-A tool for **PUBLIC** ESPN.com Fantasy Football leagues that provides missing critical features such as power rankings, match-up scenarios other popular community-requested features.
+An application for ESPN Fantasy Football which provides users extra features such as power rankings, match-up scenarios and other popular community-requested metrics.
 
 ##
 
